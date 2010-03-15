@@ -1,0 +1,31 @@
+[development]
+timezone        = Europe/London
+database.type  = PDO_MYSQL
+database.hostname = localhost
+database.username = web-user
+database.password =	passwOrd
+database.database = project
+
+lighthouse.api = 72f669e567d6736456ac3fef87230ab47c2f0a6b
+
+twitter.user = your-username
+twitter.pass = your-password
+
+digg.api = 'url-for-digg'
+
+; Local settings inherits from development
+[local : development]
+database.database   = project_test
+
+[staging : development] 
+database.hostname = staging.localhost
+database.username = user
+database.password =	password
+database.database   = project
+
+; Test database settings inherits from staging
+; Test database/environment used for phpundercontrol
+[test : staging] 
+database.database   = project_test
+
+[production : staging]
