@@ -1,0 +1,4 @@
+<?=$this->partial('/common/_sub_menu.phtml',array('topic'=>$this->subMenu))?>
+<div id="accordion">
+<?=$this->partial('/projects/_project.phtml',array('project'=>$this->project->repository,'projectInfo'=>$this->projectInfo));?>
+</div>

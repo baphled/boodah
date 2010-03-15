@@ -1,0 +1,16 @@
+<?php 
+$this->headTitle('Baphled Projects');
+$this->title = 'Bug Tracking';
+?>
+<div id="accordion">
+<?php
+echo $this->tickets;
+if(is_array($this->milestones)) {
+	foreach ($this->milestones as $milestone) {
+		echo $milestone;
+	}
+} else {
+	echo $this->milestones;
+}
+?>
+</div>

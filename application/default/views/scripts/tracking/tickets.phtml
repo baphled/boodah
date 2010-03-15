@@ -1,0 +1,11 @@
+<?php
+$this->headTitle('Baphled Projects');
+$this->title = "View {$this->projectName}'s Tickets";
+?>
+<div id="accordion">
+<?php
+foreach ($this->ticketLog as $log) {
+ 	echo $this->partial('/common/_ticket.phtml',array('ticketLog'=>$log->ticket,'projectName'=>$this->projectName));
+}
+?>
+</div>

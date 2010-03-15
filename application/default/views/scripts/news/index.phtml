@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Default home page view
+ *  
+ * @author
+ * @version
+ */
+
+$this->headTitle('Baphled News');
+$this->title = 'News';
+echo $this->partial('/common/_sub_menu.phtml',array('topics'=>$this->topics));
+echo $this->partial('/common/_news.phtml',array('news'=>$this->news))?>

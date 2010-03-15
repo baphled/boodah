@@ -1,0 +1,6 @@
+<ul class="float-panels">
+	<li id="left"><img src="<?=$this->tweet['profile_image_url'] ?>" alt="<?=$this->tweet['name'] ?>: <?= $this->tweet['description'] ?>" /></li>
+	<li><a class="header" href="<?=$this->tweet['url'] ?>" target="_blank"><?=$this->tweet['nick'] ?></a></li>
+	<li><a href="http://twitter.com/<?=$this->tweet['nick'] ?>/status/<?=$this->tweet['id'] ?>" target="_blank"><?=$this->tweet['created_at'] ?></a></li>
+	<li class="panel-text"><?=$this->tweet['msg'] ?></li>
+</ul>

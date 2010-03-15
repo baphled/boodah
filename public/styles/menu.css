@@ -1,0 +1,47 @@
+div.sc_menu_wrapper, div.sc_menu_wrapper_slim {
+	overflow:auto;
+	border-width:1px;
+	margin-bottom:23px;
+	border-style:dashed
+}
+div.sc_menu {
+  padding: 15px 0;
+  overflow: auto
+}
+
+.sc_menu a {
+  display: block;
+  margin-bottom: 5px;
+  width: 155px;
+  float:left;
+  margin-right:5px;
+  margin-left:5px;
+  border: 2px rgb(79, 79, 79) solid;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;              
+  text-align:center;
+  /* When image support is turned off */
+  color: #fff;
+  background:#A3B744;
+}
+.sc_menu a:hover {
+  border-color: rgb(130, 130, 130);
+}
+
+/* Styling tooltip */
+.sc_menu_tooltip {
+  display: block;
+  position: absolute;
+
+  padding: 6px;
+  font-size: 12px;
+  color: #fff;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;      
+
+  border: 1px solid rgb(79, 79, 79);
+  background: rgb(0, 0, 0);
+  /* Make background a bit transparent for browsers that support rgba */
+  background: rgba(0, 0, 0, 0.5);
+}

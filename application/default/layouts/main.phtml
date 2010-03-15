@@ -1,0 +1,63 @@
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<?php echo $this->headTitle()?>
+<link href="<?php echo $this->baseUrl?>/styles/main.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $this->baseUrl?>/styles/menu.css" rel="stylesheet" type="text/css" />
+<link type="text/css" href="<?php echo $this->baseUrl?>/styles/jquery-ui-1.7.1.custom.css" rel="stylesheet" />	
+<script type="text/javascript" src="<?php echo $this->baseUrl?>/scripts/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl?>/scripts/jquery-ui-1.7.1.custom.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#accordion").accordion();
+		$(".tabs").tabs();
+	});
+	</script>
+</head>
+<body>
+<div id="main-container">
+	<div id="top-main">
+    	<div id="left-logo">
+    		<div id="logo"></div>
+            <div id="tweet"><?php echo $this->latestTweet ?></div>
+        </div>
+        <div id="right-logo">
+        	<a href="http://baphled.wordpress.com" target="_blank"><div id="rss-logo" class="logo"></div></a>
+            <a href="http://twitter.com/baphled" target="_blank"><div id="twitter-logo" class="logo"></div></a>
+            <a href="http://www.facebook.com/profile.php?id=757577405" target="_blank"><div id="facebook-logo" class="logo"></div></a>
+            <a href="http://www.linkedin.com/pub/4/6b7/270" target="_blank"><div id="linkedin-logo" class="logo"></div></a>
+    	</div>
+    </div>
+    <?php echo $this->partial('_menu.phtml',$this->menu) ?>
+    <div id="sub-content">
+        <div id="main-content">
+        	<div id="main-content-top"></div>
+        	<div id="main-content-wrapper">
+        		<div id="main-header">
+	        		<h1>
+		        		<?=$this->title ?>
+		        	</h1>
+		        	<?php echo $this->partial('_sub_menu.phtml',array('topics'=>$this->subMenu))?>
+		        </div>
+    		<div id="main-content-body">
+    		<?= $this->layout()->content ?>
+	    </div>
+	</div>
+    <div id="main-content-bottom"></div>
+        </div>
+        <?php
+        	if(!array($this->rightPanel)) { 
+        		echo $this->rightPanel;
+        	} else {
+        		foreach ($this->rightPanel as $panel) {
+        			echo $panel;
+        		}
+        	}
+        ?>
+        
+    </div>
+    <div id="footer"><div id="copyright">copyright Baphled Boodah 2009</div></div>
+</div>
+</body>
+</html>

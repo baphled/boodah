@@ -1,0 +1,46 @@
+<h3>
+	<a href="/tracking/milestone/<?=$this->projectName?>/ticket/<?=$this->ticketLog->number?>"><?php echo $this->ticketLog->title?></a>
+</h3>
+<div>	
+	<ul>
+		<li><label>Created by: </label><?=$this->ticketLog->creator_name?></li>
+		<?php if ($this->ticketLog->assigned_user_name) :?>
+		<li><label>Assigned to: </label><?=$this->ticketLog->assigned_user_name?></li>
+		<?php endif;?>
+		<li><label>Updated: </label><?=$this->ticketLog->updated_at?></li>
+		<li><label>Tag: </label><?=$this->ticketLog->tag?></li>
+		<li>
+			<label>Milestone ID: </label>
+		<?php if ($this->ticketLog->milestone_id) :?>
+			<?=$this->ticketLog->milestone_id?>
+		<?php else :?>
+			Not assigned to a milestone.
+		<?php endif;?>
+		</li>
+		<li>
+			<label>Status: </label>
+			<?php if ($this->ticketLog->closed) :?>
+			Ticket closed
+			<?php else :?>
+			Ticket open
+			<?php endif;?>
+		</li>
+		<?php if ($this->ticketLog->versions):?>
+		<li><label>Versions</label>
+		<?php endif;?>
+		<?php foreach ($this->ticketLog->versions as $version) :?>
+		<ul>
+			<li><label>Created by: </label><?= $version->creator_name?></li>
+			<?php if ($version->assigned_user_name) :?>
+			<li><label>Assigned to: </label><?= $version->assigned_user_name?></li>
+			<?php endif;?>
+			<li><label>Updated: </label><?= $version->updated_at?></li>
+			<?php if ($version->body_html) :?>
+			<li><label>Message: </label><?= $version->body_html?></li>
+			<?php endif;?>
+		</ul>
+		<?php endforeach;?>
+			
+		</li>
+	</ul>
+</div>

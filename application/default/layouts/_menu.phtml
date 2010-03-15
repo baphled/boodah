@@ -1,0 +1,11 @@
+<div id="menu-main">
+    <div id="menu-navi">
+    	<ul>
+    	<?php 
+    		foreach($this->menuItems as $item) {
+	    		echo "<li class='menu'><a href='". $item['url'] ."'>" .$item['title'] ."</a></li>";	
+			}
+		?>
+    	</ul>
+    </div>
+</div>

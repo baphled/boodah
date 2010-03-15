@@ -1,0 +1,7 @@
+<?php foreach ($this->commits as $commit) : ?>
+	<?php if (is_object($commit)) : ?>
+			<li class="commit-info"><div><b><?=$commit->author->name?></b></div>
+			<span id="blog_date"><?=$commit->authored_date?></span>
+			<a href="<?=$commit->url?>" target="_blank"><?=$commit->message?></a></li>
+		<?php endif; ?>
+<?php endforeach; ?>

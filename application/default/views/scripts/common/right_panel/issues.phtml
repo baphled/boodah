@@ -1,0 +1,15 @@
+<?php 
+foreach ($this->issues as $item) : ?> <?php
+	$issue = $item->project;
+ 	if(is_array($this->milestones[$issue->permalink]) && (1 == $issue->public)):?>
+	<li class='list'>
+		<a href='/tracking/milestone/<?=$issue->permalink?>' title='<?=$issue->permalink?>'><?=$issue->name?></a>
+		<ul>
+			<?php
+			foreach ($this->milestones[$issue->permalink] as $milestone) : ?>
+			<li class="list"><a href="<?=$milestone->milestone->url?>" target="_blank" title="<?=$milestone->milestone->title?>"><?=$milestone->milestone->title?></a></li>
+			<?php endforeach;?>
+		</ul>
+	</li>
+	<?php endif;
+endforeach;?>

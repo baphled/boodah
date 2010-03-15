@@ -1,0 +1,26 @@
+<div id="right-content">
+    <div id="right_panel-top">
+    	<span class="right_panel-title"><?php echo $this->name ?></span>
+    </div>
+    <div id="right_panel-mid">
+    	<div id="<?php echo $this->name?>-info" class="panel">
+     	<ul>
+      <?php
+      	if('digg-news' == $this->name) {
+      		echo $this->partial('/common/right_panel/diggs.phtml',array('news'=>$this->news));
+      	}
+      	if('projects' == $this->name) {
+	      	echo $this->partial('/common/right_panel/projects.phtml',array('projects'=>$this->projects));	
+      	} elseif(substr_count($this->name,'tweets')) {
+      		echo $this->partial('/common/right_panel/tweets.phtml',array('tweets'=>$this->tweets));
+      	} elseif ('issues' == $this->name) {
+      		echo $this->partial('/common/right_panel/issues.phtml',array('milestones'=>$this->milestones, 'issues'=>$this->issues));
+      	} elseif('recommended' == $this->name) {
+      		echo '<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Player_0bc93de9-73d7-42aa-9715-e729fc660a3a"  WIDTH="160px" HEIGHT="600px"> <PARAM NAME="movie" VALUE="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fboodahnet-20%2F8003%2F0bc93de9-73d7-42aa-9715-e729fc660a3a&Operation=GetDisplayTemplate"><PARAM NAME="quality" VALUE="high"><PARAM NAME="bgcolor" VALUE="#FFFFFF"><PARAM NAME="allowscriptaccess" VALUE="always"><embed src="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fboodahnet-20%2F8003%2F0bc93de9-73d7-42aa-9715-e729fc660a3a&Operation=GetDisplayTemplate" id="Player_0bc93de9-73d7-42aa-9715-e729fc660a3a" quality="high" bgcolor="#ffffff" name="Player_0bc93de9-73d7-42aa-9715-e729fc660a3a" allowscriptaccess="always"  type="application/x-shockwave-flash" align="middle" height="600px" width="160px"></embed></OBJECT> <NOSCRIPT><A HREF="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fboodahnet-20%2F8003%2F0bc93de9-73d7-42aa-9715-e729fc660a3a&Operation=NoScript">Amazon.com Widgets</A></NOSCRIPT>';
+      	}
+      ?>
+      	</ul>
+     	</div>
+    </div>
+    <div id="right_panel-bottom"></div>
+</div>

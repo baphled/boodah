@@ -1,0 +1,11 @@
+<?php if (is_array($this->tickets[$this->project->permalink])) :?>
+<span><h3>Tickets</h3></span>
+<ul>
+	<?php foreach ($this->tickets[$this->project->permalink] as $tickets) : ?>
+		<li><h3><a href="/tracking/milestone/<?=$this->project->permalink?>/ticket/<?=$tickets->ticket->id?>" target="_blank" title="<?=$tickets->ticket->title?>"><?=$tickets->ticket->title?></a></h3></li>
+		<li><label>Creator: </label><?=$tickets->ticket->creator_name?></li>
+		<li><label>Tag: </label><?=$tickets->ticket->tag?></li>
+		<li><label>Last Updated: </label><?=$tickets->ticket->updated_at?></li>
+	<?php endforeach; ?>
+</ul>
+<?php endif;?>

@@ -1,0 +1,8 @@
+<h3><a class="header" href="<?=$this->project->url ?>" target="_blank"><?=$this->project->name ?></a></h3>
+<div>
+	<div id="description"><?=$this->project->description ?></div>
+	<p>Lastest commits</p>
+	<ul id="commits">
+	 	<?=$this->partial('/common/_commit_loop.phtml',array('commits'=>$this->projectInfo));?>
+	</ul>
+</div>

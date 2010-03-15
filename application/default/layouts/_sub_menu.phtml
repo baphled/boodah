@@ -1,0 +1,19 @@
+<?php if (is_array($this->topic) || $this->topic instanceof stdClass):?>
+<?php if (is_array($this->topic)) :?>
+<div class="sc_menu_wrapper_slim">
+<?php else :?>
+<div class="sc_menu_wrapper">
+<?php endif;?>
+	<div class="sc_menu">
+		<?php if (is_array($this->topic)) :?>
+			<?php foreach ($this->topic as $topic) : ?>
+				<a href="<?=$topic['link']?>" title="<?=$topic['title']?>"><?=$topic['text']?></a>
+			<?php endforeach;?>
+		<?php else : ?>
+		<?php foreach ($this->topics as $topic) :?>
+			<a href="/news/topic/<?=$topic->short_name?>" title="<?=$topic->name?>"><?=$topic->name?></a>
+		<?php endforeach;?>
+		<?php endif;?>
+	</div>
+</div>
+<?php endif;?>

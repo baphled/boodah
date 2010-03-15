@@ -1,0 +1,21 @@
+<?php
+// @todo need to turn into a helper 
+if(method_exists($this->project,'url')) {
+	$url = $this->project->url;
+} else {
+	$url = "http://baphled.lighthouseapp.com/projects/{$this->project->id}-" .$this->project->permalink;
+}
+if (1 == $this->project->public) :
+?>
+<h3><a class="header" href="<?=$url?>" target="_blank"><?=$this->project->name?></a></h3>
+<div>
+<ul>
+	<li><label>Description:</label> <?=$this->project->description ?></li>
+	<li><label>Created:</label> <?=$this->project->created_at ?></li>
+	<li><label>License:</label> <?=$this->project->license ?></li>
+	<li><label>Open tickets:</label><a href="/tracking/milestone/<?=$this->project->permalink?>/tickets"><?=$this->project->open_tickets_count ?></a></li>
+</ul>
+<?php echo $this->partial('/common/_milestones.phtml',array('milestones'=>$this->milestones,'project'=>$this->project)) ?>
+<?php echo $this->partial('/common/_tickets.phtml',array('tickets'=>$this->tickets,'project'=>$this->project)) ?>
+</div>
+<?php endif;?>

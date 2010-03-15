@@ -1,0 +1,9 @@
+<?php if (is_array($this->milestones[$this->project->permalink])) :?>
+<span><h3>Mile Stones</h3></span>
+<ul>
+<?php foreach ($this->milestones[$this->project->permalink] as $milestone) : ?>
+	<li><h4><a href="<?=$milestone->milestone->url?>" target="_blank" title="<?=$milestone->milestone->title?>"><?=$milestone->milestone->title?></a></h4></li>
+	<li><?=$milestone->milestone->goals?></li>
+<?php endforeach; ?>
+</ul>
+<?php endif;?>

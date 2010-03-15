@@ -1,0 +1,5 @@
+<?php
+$this->headTitle('Baphled Projects');
+$this->title = "View {$this->projectName}'s Ticket";
+echo $this->partial('/common/_ticket.phtml',array('ticketLog'=>$this->ticketLog,'projectName'=>$this->projectName));
+?>

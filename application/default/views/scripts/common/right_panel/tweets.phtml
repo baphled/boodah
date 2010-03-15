@@ -1,0 +1,7 @@
+<?php for($i=0;$i<=5;$i++) :?>
+	<li class='list'>
+		<a href='<?=$this->tweets[$i]['home']?>/status/<?=$this->tweets[$i]['id']?>' target='_blank' title='<?=$this->tweets[$i]['name']?>: <?=$this->tweets[$i]['location']?>'>
+			<?=$this->tweets[$i]['nick']?>: <?=$this->tweets[$i]['msg']?>
+		</a>
+	</li>
+<?php endfor; ?>

@@ -1,0 +1,16 @@
+<div id="description">
+ <?php if(is_array($this->news)) :
+	foreach ($this->news as $item) : ?>
+		<ul>
+			<li class="list media"><?=$item->media?></li>
+			<li class="list">
+				<img src="<?=$item->user->icon?>" />
+				<h3>
+					<a href="<?=$item->link?>" title="<?=$item->description?>" target="_blank"><?=$item->title?></a>
+				</h3>
+			</li>
+			<li class="list"><?=$item->description?></li>
+		</ul>
+	<?php endforeach;
+endif; ?>
+</div>
