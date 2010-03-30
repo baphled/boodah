@@ -53,8 +53,9 @@ class BaseController extends Zend_Controller_Action {
 	}
 	
 	function init() {
+	  $config = Zend_Registry::get(Zend_SetupInit::$_env);
 		$this->_actions = array();
-		$this->_twitter = new Twitter('baphled','Sh1zzl3');
+		$this->_twitter = new Twitter($config->twitter->user, $config->twitter->pass);
     	$this->_github = new GitHubApi('baphled');
     	$this->_lighthouse = new LightHouseApi('baphled');
     	$this->_digg = new DiggApi('baphled');
